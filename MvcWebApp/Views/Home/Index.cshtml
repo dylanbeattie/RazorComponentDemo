@@ -1,8 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using RazorComponentLib
+<h2>Static:</h2>
+@(await Html.RenderComponentAsync<Counter>(RenderMode.Static))
+<hr />
+<h2>Server:</h2>
+@(await Html.RenderComponentAsync<Counter>(RenderMode.Server))
+<hr />
+<h2>Server Prerendered:</h2>
+@(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+<hr />
+<h2>WebAssembly:</h2>
+@(await Html.RenderComponentAsync<Counter>(RenderMode.WebAssembly))
+<hr />
+<h2>WebAssembly Prerendered:</h2>
+@(await Html.RenderComponentAsync<Counter>(RenderMode.WebAssemblyPrerendered))
+<hr />
